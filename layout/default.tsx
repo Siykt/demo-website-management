@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import type { MenuProps } from 'antd'
 import { Breadcrumb, Layout, Menu } from 'antd'
 import { DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons'
-import { ConfigResponseData } from '../pages/api/config'
 
 const { Header, Content, Footer, Sider } = Layout
 
@@ -25,9 +24,14 @@ const items: MenuItem[] = [
   getItem('Files', '9', <FileOutlined />)
 ]
 
+type Config = {
+  icp?: string
+  copyright?: string
+}
+
 interface Props {
   children?: React.ReactNode
-  config?: ConfigResponseData
+  config?: Config
 }
 
 export default function DefaultLayout({ children, config }: Props) {
