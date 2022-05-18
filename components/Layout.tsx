@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import type { MenuProps } from 'antd'
 import { Layout, Menu } from 'antd'
-import { PieChartOutlined, ShopOutlined, UploadOutlined } from '@ant-design/icons'
+import { PieChartOutlined, UploadOutlined } from '@ant-design/icons'
 import { useRouter } from 'next/router'
 
 const { Header, Content, Footer, Sider } = Layout
@@ -19,7 +19,7 @@ function getItem(label: React.ReactNode, key: React.Key, icon?: React.ReactNode,
 
 const DEFAULT_ITEMS: MenuItem[] = [
   getItem('主页', 'main', <PieChartOutlined />),
-  getItem('Demo 网站预览', 'review', <ShopOutlined />),
+  // getItem('Demo 网站预览', 'review', <ShopOutlined />),
   getItem('上传新 Demo 文件', 'uploadNewDemoFile', <UploadOutlined />)
 ]
 
@@ -45,18 +45,14 @@ export default function DefaultLayout({ children, config, items = [], onMenuClic
   }
 
   const [activeKey] = useState(
-    defaultSelectedKey || router.asPath === '/' ? 'main' : router.asPath === '/review' ? 'review' : 'uploadNewDemoFile'
+    defaultSelectedKey ? defaultSelectedKey : router.asPath === '/upload' ? 'uploadNewDemoFile' : 'main'
   )
 
   const handleClickMenu = (key: string) => {
     console.log('[handleClickMenu]', key)
-    if (activeKey === key) return
     switch (key) {
       case 'main':
         router.push('/')
-        break
-      case 'review':
-        router.push('/review')
         break
       case 'uploadNewDemoFile':
         router.push('/upload')

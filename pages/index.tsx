@@ -187,7 +187,7 @@ const Home: NextPage<StaticProps> = ({ visitCountData, visitRegionData, preferen
         <ICard title="快捷入口">
           <Row gutter={10}>
             <Col span={6}>
-              <Link href="/demos/hk/index.html">模版网站A</Link>
+              <Link href="/review?id=hk">模版网站A</Link>
             </Col>
           </Row>
         </ICard>
