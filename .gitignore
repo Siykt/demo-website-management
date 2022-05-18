@@ -35,3 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 .vscode/settings.json
 yarn.lock
+
+public/demos
