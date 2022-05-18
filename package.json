@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@antv/g2plot": "^2.4.16",
     "antd": "^4.20.4",
     "axios": "^0.27.2",
     "gsap": "^3.10.4",

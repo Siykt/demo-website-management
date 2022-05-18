@@ -1,0 +1,45 @@
+.f,
+.fc,
+.fsb,
+.fsa,
+.fcsb,
+.fcc {
+  display: flex;
+}
+
+.fc,
+.fcc {
+  justify-content: center;
+  align-items: center;
+}
+
+.fsb,
+.fcsb {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fsa {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fcsb,
+.fcc {
+  flex-direction: column;
+}
+
+.text-overflow {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
