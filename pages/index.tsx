@@ -5,6 +5,8 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Link from 'next/link'
 
+const TEMPLATES = ['company-1', 'company-2']
+
 interface StaticProps {
   templates: string[]
 }
@@ -12,7 +14,7 @@ interface StaticProps {
 export async function getStaticProps() {
   return {
     props: {
-      templates: ['company-1']
+      templates: TEMPLATES
     }
   }
 }
