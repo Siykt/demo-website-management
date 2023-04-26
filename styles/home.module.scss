@@ -1,6 +1,8 @@
 .reviewWrapper {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
 
   &Box {
     position: relative;

@@ -7,7 +7,7 @@ import Link from 'next/link'
 import styles from '../styles/home.module.scss'
 import classnames from 'classnames'
 
-const TEMPLATES = ['company-1', 'company-2', 'company-3']
+const TEMPLATES = ['company-1', 'company-2', 'company-3', 'company-4']
 
 interface StaticProps {
   templates: string[]

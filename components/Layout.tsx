@@ -64,7 +64,7 @@ export default function DefaultLayout({ children, config, items = [], onMenuClic
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Sider collapsible={false} collapsed={collapsed} onCollapse={onCollapse}>
+      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
         <div className="fc">
           <img style={{ width: '60px', height: '60px' }} src="/logo.png" alt="logo" />
         </div>
