@@ -7,7 +7,7 @@ import style from '../styles/review.module.scss'
 
 const Review: NextPage = () => {
   const router = useRouter()
-  const src = `/demos/${router.query.id}/index.html`
+  const src = `/templates/${router.query.id}/index.html`
 
   return (
     <DefaultLayout defaultSelectedKey="main">

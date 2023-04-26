@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import type { MenuProps } from 'antd'
 import { Layout, Menu } from 'antd'
-import { PieChartOutlined, UploadOutlined } from '@ant-design/icons'
+import { PieChartOutlined } from '@ant-design/icons'
 import { useRouter } from 'next/router'
 
-const { Header, Content, Footer, Sider } = Layout
+const { Content, Footer, Sider } = Layout
 
 type MenuItem = Required<MenuProps>['items'][number]
 
@@ -18,9 +18,9 @@ function getItem(label: React.ReactNode, key: React.Key, icon?: React.ReactNode,
 }
 
 const DEFAULT_ITEMS: MenuItem[] = [
-  getItem('主页', 'main', <PieChartOutlined />),
+  getItem('主页', 'main', <PieChartOutlined />)
   // getItem('Demo 网站预览', 'review', <ShopOutlined />),
-  getItem('上传新 Demo 文件', 'uploadNewDemoFile', <UploadOutlined />)
+  // getItem('上传新 Demo 文件', 'uploadNewDemoFile', <UploadOutlined />)
 ]
 
 type Config = {
@@ -54,9 +54,9 @@ export default function DefaultLayout({ children, config, items = [], onMenuClic
       case 'main':
         router.push('/')
         break
-      case 'uploadNewDemoFile':
-        router.push('/upload')
-        break
+      // case 'uploadNewDemoFile':
+      //   router.push('/upload')
+      //   break
       default:
         onMenuClick && onMenuClick(key)
     }
@@ -64,7 +64,7 @@ export default function DefaultLayout({ children, config, items = [], onMenuClic
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
+      <Sider collapsible={false} collapsed={collapsed} onCollapse={onCollapse}>
         <div className="fc">
           <img style={{ width: '60px', height: '60px' }} src="/logo.png" alt="logo" />
         </div>
@@ -77,7 +77,6 @@ export default function DefaultLayout({ children, config, items = [], onMenuClic
         />
       </Sider>
       <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }} />
         <Content style={{ margin: '0 16px' }}>{children}</Content>
         <Footer style={{ textAlign: 'center' }}>
           {config?.icp && <span>{config.icp}</span>}
