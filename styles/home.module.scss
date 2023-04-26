@@ -1,4 +1,74 @@
-.chart {
-  width: 100%;
-  height: 300px;
+.reviewWrapper {
+  display: flex;
+  gap: 20px;
+
+  &Box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 500px;
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 0 0 20px 0 #dddddd80;
+    border-radius: 10px;
+    transition: all 0.3s ease-in;
+    user-select: none;
+
+    &:hover {
+      transition: all 0.3s ease-out;
+      box-shadow: 0 0 20px 0 #ccc;
+
+      .toReview {
+        opacity: 1;
+        transition: all 0.3s ease-out;
+      }
+
+      .title,
+      iframe {
+        transition: all 0.3s ease-out;
+        filter: blur(4px);
+      }
+    }
+
+    .toReview {
+      opacity: 0;
+      transition: all 0.3s ease-in;
+    }
+
+    iframe {
+      transition: all 0.3s ease-in;
+      pointer-events: none;
+      border: none;
+    }
+  }
+}
+
+.title {
+  pointer-events: none;
+  font-size: 20px;
+  transition: all 0.3s ease-in;
+  color: #34c5f2;
+}
+
+.toReview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  border-radius: 10px;
+  background-color: #000000af;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 26px;
+    height: 100%;
+  }
 }

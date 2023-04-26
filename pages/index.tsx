@@ -1,9 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Card, Col, Row } from 'antd'
+import { Card } from 'antd'
 import React from 'react'
 import Layout from '../components/Layout'
 import Link from 'next/link'
+import styles from '../styles/home.module.scss'
+import classnames from 'classnames'
 
 const TEMPLATES = ['company-1', 'company-2']
 
@@ -35,15 +37,17 @@ const Home: NextPage<StaticProps> = ({ templates }) => {
       </Head>
       <div className="mt-20 mb-20">
         <ICard title="模版列表">
-          <Row gutter={10}>
-            <Col span={6}>
-              {templates.map((id) => (
-                <Link key={id} href={`/review?id=${id}`}>
-                  {id}
-                </Link>
-              ))}
-            </Col>
-          </Row>
+          <div className={styles.reviewWrapper}>
+            {templates.map((id) => (
+              <div key={id} className={styles.reviewWrapperBox}>
+                <div className={styles.title}>模版 {id}</div>
+                <iframe className={classnames('w-full', 'h-full')} src={`/templates/${id}/index.html`}></iframe>
+                <div className={styles.toReview}>
+                  <Link href={`/review?id=${id}`}>前往预览</Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </ICard>
       </div>
     </Layout>
